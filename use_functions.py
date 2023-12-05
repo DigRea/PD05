@@ -34,33 +34,35 @@
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
 
-count = 0
-history = []
+def bankfunc():
 
-while True:
-    print('1 - Пополнение счета')
-    print('2 - Покупка')
-    print('3 - История покупок')
-    print('4 - Выход')
-    print(count)
-    choice = input('Выберите пункт меню: ')
-    if choice == '1':
-        refill = int(input('Введите сумму: '))
-        count += refill
-    elif choice == '2':
-        purchase = int(input('Введите сумму покупки: '))
-        if purchase > count:
-            print('Недостаточно средств!')
+    count = 0
+    history = []
+
+    while True:
+        print('1 - Пополнение счета')
+        print('2 - Покупка')
+        print('3 - История покупок')
+        print('4 - Выход')
+        print(count)
+        choice = input('Выберите пункт меню: ')
+        if choice == '1':
+            refill = int(input('Введите сумму: '))
+            count += refill
+        elif choice == '2':
+            purchase = int(input('Введите сумму покупки: '))
+            if purchase > count:
+                print('Недостаточно средств!')
+            else:
+                name = input('Введите название покупки: ')
+                count -= purchase
+                history.append((name, purchase))
+        elif choice == '3':
+            print('История покупок:')
+            for i in history:
+                print(i)
+        elif choice == '4':
+            break
         else:
-            name = input('Введите название покупки: ')
-            count -= purchase
-            history.append((name, purchase))
-    elif choice == '3':
-        print('История покупок:')
-        for i in history:
-            print(i)
-    elif choice == '4':
-        break
-    else:
-        print('Неверный пункт меню')
-        print()
+            print('Неверный пункт меню')
+            print()

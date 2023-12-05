@@ -1,3 +1,6 @@
+from victory import victory
+from use_functions import bankfunc
+
 while True:
     print('1 - Создать папку\t\t\t\t', ' 7 - Просмотр информации об ОС')
     print('2 - Удалить файл/папку\t\t\t', ' 8 - Создатель программы')
@@ -24,9 +27,9 @@ while True:
     elif choice == '8':
         pass
     elif choice == '9':
-        pass
+        victory()
     elif choice == '10':
-        pass
+        bankfunc()
     elif choice == '11':
         pass
     elif choice == '12':
