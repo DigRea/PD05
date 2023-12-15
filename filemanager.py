@@ -11,31 +11,39 @@ while True:
     print('6 - Просмотреть только файлы\t', '12 - Выход')
     print()
     choice = input('Выберите пункт меню: ')
-    if choice == '1':
+    if choice == '1':  # Done
         folder = input('Введите название папки: ')
         if not os.path.exists(folder):
             os.mkdir(folder)
+        print()
     elif choice == '2':
         pass
     elif choice == '3':
         pass
-    elif choice == '4':
+    elif choice == '4':  # Done
+        print()
+        print('Содержимое рабочей директории:')
         print(sorted(os.listdir()))
+        print()
     elif choice == '5':
         pass
     elif choice == '6':
         pass
     elif choice == '7':
         pass
-    elif choice == '8':
-        pass
-    elif choice == '9':
+    elif choice == '8':  # Done
+        print()
+        print('Создатель программы: Ярослав С. Васильев,')
+        print('студент Университета ИИ (2023)')
+        print()
+    elif choice == '9':  # Done
         victory()
-    elif choice == '10':
+    elif choice == '10':  # Done
+        print()
         bankfunc()
     elif choice == '11':
         pass
-    elif choice == '12':
+    elif choice == '12':  # Done
         break
     else:
         print('Неверный пункт меню')

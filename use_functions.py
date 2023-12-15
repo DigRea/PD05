@@ -44,11 +44,13 @@ def bankfunc():
         print('2 - Покупка')
         print('3 - История покупок')
         print('4 - Выход')
-        print(count)
+        print('Текущая сумма: ', count)
+        print()
         choice = input('Выберите пункт меню: ')
         if choice == '1':
             refill = int(input('Введите сумму: '))
             count += refill
+            print()
         elif choice == '2':
             purchase = int(input('Введите сумму покупки: '))
             if purchase > count:
@@ -57,10 +59,12 @@ def bankfunc():
                 name = input('Введите название покупки: ')
                 count -= purchase
                 history.append((name, purchase))
+            print()
         elif choice == '3':
             print('История покупок:')
             for i in history:
                 print(i)
+            print()
         elif choice == '4':
             break
         else:
