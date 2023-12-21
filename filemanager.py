@@ -1,6 +1,7 @@
 from victory import victory
 from use_functions import bankfunc
 import os
+import shutil
 
 while True:
     print('1 - Создать папку\t\t\t\t', ' 7 - Просмотр информации об ОС')
@@ -16,8 +17,13 @@ while True:
         if not os.path.exists(folder):
             os.mkdir(folder)
         print()
-    elif choice == '2':
-        pass
+    elif choice == '2':  # Done
+        rm = input('Что хотите удалить, файл (f) или папку (d)? ')
+        if rm == 'f':
+            os.remove(input('Введите название файла: '))
+        else:
+            shutil.rmtree(input('Введите название папки: '))
+        print()
     elif choice == '3':
         pass
     elif choice == '4':  # Done
