@@ -21,11 +21,25 @@ while True:
         rm = input('Что хотите удалить, файл (f) или папку (d)? ')
         if rm == 'f':
             os.remove(input('Введите название файла: '))
-        else:
+        elif rm == 'd':
             shutil.rmtree(input('Введите название папки: '))
+        else:
+            print('Непонятно, что нужно удалить.')
         print()
     elif choice == '3':
         print()
+        cp = input('Что хотите скопировать, файл (f) или папку (d)? ')
+        print()
+        if cp == 'f':
+            src = input('Введите название файла, который нужно скопировать: ')
+            dst = input('Введите новое название файла: ')
+            shutil.copy(src, dst)
+        elif cp == 'd':
+            src = input('Введите название папки, которую нужно скопировать: ')
+            dst = input('Введите новое название папки: ')
+            shutil.copytree(src, dst)
+        else:
+            print('Непонятно, что нужно скопировать.')
         print()
     elif choice == '4':  # Done
         print()
