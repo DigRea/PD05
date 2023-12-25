@@ -8,7 +8,7 @@ while True:
     print('2 - Удалить файл/папку\t\t\t', ' 8 - Создатель программы')
     print('3 - Копировать файл/папку\t\t', ' 9 - Играть в викторину')
     print('4 - Просмотр рабочей директории\t', '10 - Мой банковский счёт')
-    print('5 - Просмотреть только папки\t', '11 - ')
+    print('5 - Просмотреть только папки\t', '11 - Смена рабочей директории')
     print('6 - Просмотреть только файлы\t', '12 - Выход')
     print()
     choice = input('Выберите пункт меню: ')
@@ -25,18 +25,27 @@ while True:
             shutil.rmtree(input('Введите название папки: '))
         print()
     elif choice == '3':
-        pass
+        print()
+        print()
     elif choice == '4':  # Done
         print()
         print('Содержимое рабочей директории:')
         print(sorted(os.listdir()))
         print()
-    elif choice == '5':
-        pass
-    elif choice == '6':
-        pass
-    elif choice == '7':
-        pass
+    elif choice == '5':  # Done
+        print()
+        path = '.'
+        print([x for x in os.listdir(path) if os.path.isdir(os.path.join(path, x))])
+        print()
+    elif choice == '6':  # Done
+        print()
+        path = '.'
+        print([x for x in os.listdir(path) if not os.path.isdir(os.path.join(path, x))])
+        print()
+    elif choice == '7':  # Done
+        print()
+        print(os.uname())
+        print()
     elif choice == '8':  # Done
         print()
         print('Создатель программы: Ярослав С. Васильев,')
@@ -48,7 +57,11 @@ while True:
         print()
         bankfunc()
     elif choice == '11':
-        pass
+        print()
+        os.chdir(input('Введите путь к новой рабочей директории: '))
+        print('Новая рабочая директория:')
+        print(os.getcwd())
+        print()
     elif choice == '12':  # Done
         break
     else:
