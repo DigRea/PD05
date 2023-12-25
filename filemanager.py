@@ -56,7 +56,7 @@ while True:
     elif choice == '10':  # Done
         print()
         bankfunc()
-    elif choice == '11':
+    elif choice == '11':  # Done
         print()
         os.chdir(input('Введите путь к новой рабочей директории: '))
         print('Новая рабочая директория:')
